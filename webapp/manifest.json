@@ -1,0 +1,169 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.webcell.koolbuddy",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "com.webcell.koolbuddy.view.login",
+			"type": "XML",
+			"async": true,
+			"id": "login"
+		},
+		"dependencies": {
+			"minUI5Version": "1.65.6",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.webcell.koolbuddy.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.webcell.koolbuddy.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "Routelogin",
+					"pattern": "Routelogin",
+					"target": [
+						"Targetlogin"
+					]
+				},
+				{
+					"name": "userRegistration",
+					"pattern": "userRegistration",
+					"target": [
+						"userRegistration"
+					]
+				},
+				{
+					"name": "dashboard",
+					"pattern": "dashboard",
+					"target": [
+						"dashboard"
+					]
+				},
+				{
+					"name": "principalHome",
+					"pattern": "prdashboard",
+					"target": [
+						"prdashboard"
+					]
+				},
+				{
+					"name": "attendance",
+					"pattern": "attendance",
+					"target": [
+						"attendance"
+					]
+				},
+				{
+					"name": "students",
+					"pattern": "students",
+					"target": [
+						"students"
+					]
+				},
+				{
+					"name": "studentDetails",
+					"pattern": "studentDetails",
+					"target": [
+						"studentDetails"
+					]
+				}
+			],
+			"targets": {
+				"Targetlogin": {
+					"viewType": "XML",
+					"transition": "flip",
+					"clearControlAggregation": false,
+					"viewName": "login"
+				},
+				"userRegistration": {
+					"viewType": "XML",
+					"transition": "flip",
+					"viewName": "userRegistration"
+				},
+				"dashboard": {
+					"viewType": "XML",
+					"transition": "fade",
+					"viewName": "dashboard"
+				},
+				"prdashboard": {
+					"viewType": "XML",
+					"transition": "fade",
+					"viewName": "prdashboard"
+				},
+				"attendance": {
+					"viewType": "XML",
+					"transition": "fade",
+					"viewName": "attendance"
+				},
+				"students": {
+					"viewType": "XML",
+					"transition": "fade",
+					"viewName": "students"
+				},
+				"studentDetails": {
+					"viewType": "XML",
+					"transition": "fade",
+					"viewName": "studentDetails"
+				}
+			}
+		}
+	}
+}

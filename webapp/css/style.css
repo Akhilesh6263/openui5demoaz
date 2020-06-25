@@ -1,0 +1,240 @@
+    /* Enter your custom styles here */
+    
+    .whitefont {
+        color: white;
+    }
+    
+    .whiteBGPage {
+        background: #FFFFFF;
+    }
+    
+    .blueBGPage {
+        background: #7061E5;
+    }
+    
+    .lightRedBGPage {
+        background: #E4624A;
+    }
+    
+    .lightGreenBGPage {
+        background: #24D165;
+    }
+    
+    .pagePadding {
+        padding: 1em;
+    }
+    
+    .redButton .sapMBtnInner {
+        background: #E4624A;
+        color: white;
+        font-size: 1rem !important;
+        border: none !important;
+    }
+    
+    .redButton .sapMBtnActive {
+        background: #c84128 !important;
+    }
+    
+    .blueButton .sapMBtnInner {
+        background: #7061E5;
+        color: white;
+        font-size: 1rem !important;
+        border: none !important;
+    }
+    
+    .redButton .sapMBtnActive {
+        background: #c84128 !important;
+    }
+    
+    .dashboard {
+        margin: .5em;
+    }
+    
+    .boxMenu {
+        position: absolute;
+        z-index: 9999;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .boxMenuLeft {
+        background: white;
+    }
+    
+    .boxMenuLeft span {
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    
+    .menuItem {
+        background: transparent;
+        min-height: 2.5em;
+        padding-left: 1em;
+        /*border-bottom: solid 1px green;*/
+    }
+    
+    .welcomeBox {
+        padding: .7em;
+        background-image: linear-gradient(to right, #40c38d, #47e481) !important;
+        background: linear-gradient(#1F5EC3, #5286ed) !important;
+    }
+    /*.sapMSinglePCRow, .sapMSinglePCBlockersColumn{*/
+    /*	height:3em !important;*/
+    /*}*/
+    /*.sapUiCalendarApp .sapUiCalendarAppCont {*/
+    /*    background: red !important;*/
+    /*}*/
+    
+    .myClanedar {
+        border: solid 2px #21c8b5 !important;
+        border-radius: 5px;
+    }
+    
+    .myClanedar .sapMPCHeadActionsToolbar {
+        background: #21c8b5 !important;
+    }
+    
+    .myClanedar .sapMPCHeadActionsToolbar span {
+        color: white;
+        /*font-size: 1.2rem;*/
+    }
+    
+    .myClanedar .sapMPCHeadActionsToolbar span .sapMBtnIcon {
+        color: white;
+    }
+    
+    .myClanedar .sapMPCHeadNavToolbar span {
+        color: white;
+        font-size: 1.1rem;
+    }
+    
+    .myClanedar .sapMPCHeadNavToolbar {
+        background: #21c8b5 !important;
+    }
+    
+    .gridItem {
+        margin: 0 .5em .5em .5em;
+    }
+    
+    .box-logo-wrapper {
+        background: linear-gradient(#1F5EC3, #5286ed) !important;
+        padding-bottom: 2em;
+        /*border-radius: 0 0 50px 50px;*/
+    }
+    /*dynamic page blue theme*/
+    
+    .sapFDynamicPageTitle {
+        background: #346EE0;
+        background: #1E1E99;
+        background: linear-gradient(to right, #1F5EC3, #1E1E99);
+        background: linear-gradient(#1E1E99, #346EE0) !important;
+        background: linear-gradient(#1F5EC3, #5286ed) !important;
+        /*background: linear-gradient(to right, #1E1E99, #1F5EC3);*/
+        box-shadow: none !important;
+        /*background: linear-gradient(#282628, #405A71) !important;*/
+    }
+    
+    .sapFDynamicPageContent {
+        background: white !important;
+    }
+    
+    .sapMSFF {
+        border-radius: 1rem !important;
+        border-color: transparent !important;
+    }
+    
+    .sapMSegBBtn.sapMSegBBtnSel .sapMSegBBtnInner {
+        background: #346EE0 !important;
+        color: #fff;
+        border-color: #346EE0 !important;
+    }
+    
+    .sapMSegB .sapMSegBBtn .sapMSegBBtnInner {
+        font-size: .875rem;
+        border-color: #346EE0 !important;
+    }
+    
+    .nextclass .sapMMsgStripInformation {
+        background-color: transparent;
+        border-color: transparent;
+        color: #FFF;
+    }
+    
+    .avtarIcon {
+        box-shadow: 0px 3px 4px 1px #fff;
+    }
+    
+    .boxsegbtn {
+        margin-bottom: -1.8em;
+        /* border-radius: 50% !important; */
+    }
+    /*Attendance page*/
+    
+    .iconTabBar .sapMITH,
+    div[id*='stickyPlaceholder'] .sapMITH {
+        /*background: linear-gradient(to right, #1F5EC3, #5286ed) !important;*/
+        background: #5286ed;
+        box-shadow: none;
+    }
+    
+    .iconTabBar .sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected .sapMITBText,
+    .iconTabBar .sapMITBTextOnly .sapMITBFilterDefault .sapMITBText,
+    div[id*='stickyPlaceholder'] .sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected .sapMITBText,
+    div[id*='stickyPlaceholder'] .sapMITBTextOnly .sapMITBFilterDefault .sapMITBText {
+        color: white !important;
+    }
+    
+    .sapMITBContent {
+        background: white !important;
+    }
+    
+    .box-class {
+        /*background: linear-gradient(to right, #1F5EC3, #5286ed) !important;*/
+        background: #5286ed;
+        height: 2.8em;
+        padding: 1em;
+    }
+    
+    .sapMITBContent {
+        padding: 0 !important;
+        border: none !important;
+    }
+    /*student list page*/
+    
+    .multicomboclass .sapMInputBaseContentWrapper {
+        border-radius: 1em;
+        background: white;
+    }
+    
+    .studentpanel {
+        border: solid 1px #d9d9d9;
+        border-radius: .5em;
+    }
+    
+    .studentpanel .sapMTB {
+        background: lightskyblue;
+    }
+    
+    .studentpanel .sapMPanelContent {
+        padding: 0;
+    }
+    /*student details*/
+    
+    .carousalctrl {
+        border-radius: .5em;
+        border: solid 1px #ccc;
+    }
+    
+    .carousalctrl .sapFCard .sapFCardHeader {
+        background: #ccc !important;
+    }
+    
+    .carousalctrl .sapMCrslControls.sapMCrslControlsBottom,
+    .sapMCrslControlsNoArrows.sapMCrslControlsBottom {
+        background: #ccc !important;
+    }
+    
+    .chartBox {
+        min-height: 300px;
+        height: auto;
+    }

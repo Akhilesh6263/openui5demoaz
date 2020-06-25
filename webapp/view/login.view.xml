@@ -1,0 +1,32 @@
+<mvc:View controllerName="com.webcell.koolbuddy.controller.login" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page showHeader="false" class="whiteBGPage">
+					<content>
+						<VBox alignContent="Center" alignItems="Center" height="100%" width="100%">
+							<VBox alignContent="Center" alignItems="Center" width="100%" class="box-logo-wrapper">
+								<VBox class="box-logo sapUiMediumMarginTop">
+									<!--<Image src="image/mnr-logo-new.jpg" width="12em" class="sapUiMediumMarginTop"></Image>-->
+									<Avatar displaySize="XL" src="image/mnr-logo-new.jpg" class="sapUiTinyMarginEnd"/>
+								</VBox>
+							</VBox>
+							<VBox class="sapUiMediumMarginTop loginVBContainer" width="80%">
+								<Input id="idUserName" placeholder="Email or Mobile number" class="input-style"></Input>
+								<Input placeholder="Password" class="input-style"></Input>
+							</VBox>
+							<VBox class="sapUiMediumMarginTop" width="80%">
+								<Button text="LOGIN" width="100%" class="redButton" press="onLogin"></Button>
+							</VBox>
+							<Link text="Forget Password?" press="onForgetPassword" class="sapUiSmallMarginTop"/>
+							<Text text="OR" class="sapUiLargeMarginTop"></Text>
+							<VBox class="sapUiLargeMarginTop" width="80%">
+								<Button text="SIGNUP" width="100%" class="blueButton" press="onRegister"></Button>
+							</VBox>
+						</VBox>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

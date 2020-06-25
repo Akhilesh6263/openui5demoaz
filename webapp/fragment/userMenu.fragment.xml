@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<HBox width="100%" height="100%" class="boxMenu" id="boxMenu">
+		<HBox width="100%" height="100%">
+			<VBox width="70%" height="100%" class="boxMenuLeft">
+				<HBox justifyContent="End" height="1em" visible="false">
+					<Button class="headerLeftBtn" icon="sap-icon://decline" type="Transparent" press="toggleMenu"></Button>
+				</HBox>
+				<VBox alignContent="Center" alignItems="Center" class="welcomeBox">
+					<Avatar displaySize="M" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+					<Title text="Hi, Pragya Upadhyay" wrapping="true" class="sapUiTinyMarginTop"/>
+					
+				</VBox>
+				<VBox width="100%" class="sapUiTinyMarginTop">
+					<CustomListItem class="menuItem" type="Active" press="onMenuItemPress">
+						<Text text="Home"></Text>
+					</CustomListItem>
+					<CustomListItem class="menuItem" type="Active" press="onMenuItemPress">
+						<Text text="My Profile"></Text>
+					</CustomListItem>
+					<CustomListItem class="menuItem" type="Active" press="onMenuItemPress">
+						<Text text="My Leaves"></Text>
+					</CustomListItem>
+					<CustomListItem class="menuItem" type="Active" press="onMenuItemPress">
+						<Text text="MNR Holidays"></Text>
+					</CustomListItem>
+					<CustomListItem class="menuItem" type="Active" press="onMenuItemPress">
+						<Text text="School Events"></Text>
+					</CustomListItem>
+					<CustomListItem class="menuItem" type="Active" press="onMenuItemPress">
+						<Text text="Circulars"></Text>
+					</CustomListItem>
+					<CustomListItem class="menuItem" type="Active" press="onMenuItemPress">
+						<Text text="Logout"></Text>
+					</CustomListItem>
+				</VBox>
+			</VBox>
+			<VBox width="29%" height="100%" class="boxMenuRight" id="boxMenuRight"></VBox>
+		</HBox>
+	</HBox>
+</core:FragmentDefinition>

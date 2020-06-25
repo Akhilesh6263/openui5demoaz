@@ -1,0 +1,208 @@
+<mvc:View controllerName="com.webcell.koolbuddy.controller.attendance" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f" xmlns:grid="sap.ui.layout.cssgrid" xmlns:layout="sap.ui.layout"
+	xmlns:unified="sap.ui.unified" xmlns:customCtrl="com.webcell.koolbuddy.control">
+	<App>
+		<pages>
+			<Page showFooter="false" showHeader="false">
+				<core:Fragment fragmentName="com.webcell.koolbuddy.fragment.userMenu" type="XML"/>
+				<f:DynamicPage class="sapUiNoContentPadding" toggleHeaderOnTitleClick="true" stickySubheaderProvider="iconTabBar">
+					<f:title>
+						<f:DynamicPageTitle>
+							<f:heading>
+								<FlexBox fitContainer="true" alignItems="Center">
+									<core:Icon src="sap-icon://menu2" color="white" class="sapUiSmallMarginEnd" press="toggleMenu"></core:Icon>
+									<Title text="Record Attendance" wrapping="true" class="whitefont"/>
+								</FlexBox>
+							</f:heading>
+							<f:expandedContent>
+								<VBox>
+									<VBox visible="{device>/system/phone}">
+										<SearchField placeholder="Search students" width="100%"></SearchField>
+										<layoutData>
+											<OverflowToolbarLayoutData minWidth="100%" maxWidth="100%" shrinkable="true" priority="NeverOverflow"/>
+										</layoutData>
+									</VBox>
+								</VBox>
+							</f:expandedContent>
+							<f:snappedContent></f:snappedContent>
+							<f:content></f:content>
+							<f:actions>
+								<HBox justifyContent="SpaceBetween" alignItems="Center">
+									<VBox visible="{= ${device>/system/phone} ? false : true}">
+										<SearchField placeholder="Search students" width="100%"></SearchField>
+										<layoutData>
+											<OverflowToolbarLayoutData minWidth="100%" maxWidth="100%" shrinkable="true" priority="NeverOverflow"/>
+										</layoutData>
+									</VBox>
+									<core:Icon class="sapUiSmallMarginBegin" visible="{= ${device>/system/desktop} ? false : true}" src="sap-icon://nav-back" color="white" press="onBack"></core:Icon>
+								</HBox>
+							</f:actions>
+							<f:navigationActions>
+								<core:Icon visible="{device>/system/desktop}" src="sap-icon://nav-back" color="white" press="onBack"></core:Icon>
+							</f:navigationActions>
+						</f:DynamicPageTitle>
+					</f:title>
+					<!-- DynamicPage Header -->
+					<f:header>
+						<f:DynamicPageHeader pinnable="true"></f:DynamicPageHeader>
+					</f:header>
+					<f:content>
+						<VBox>
+							<IconTabBar id="iconTabBar" class="iconTabBar">
+								<items>
+									<IconTabFilter text="Class V">
+										<HBox class="box-class" justifyContent="SpaceBetween" alignItems="Center">
+											<Title text="Classroom" class="whitefont"></Title>
+											<Title text="Room 2" class="whitefont"></Title>
+										</HBox>
+										<VBox class="sapUiSmallMarginTop sapUiSmallMarginEnd sapUiSmallMarginBottom sapUiSmallMarginBegin">
+											<SegmentedButton selectedKey="Math" width="100%" selectionChange="onDisplayTypeChange">
+												<items>
+													<SegmentedButtonItem text="Math" key="Math"/>
+													<SegmentedButtonItem text="Science" key="Science"/>
+													<SegmentedButtonItem text="English" key="English"/>
+												</items>
+											</SegmentedButton>
+											<f:GridList class="dashboardList sapUiSmallMarginTop" updateFinished="onUpdateFinished">
+												<f:customLayout >
+													<grid:GridBoxLayout boxesPerRowConfig="XL2 L2 M1 S1"/>
+												</f:customLayout>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Prachi Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Atharva Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Prachi Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Atharva Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Prachi Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Atharva Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Prachi Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Atharva Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Prachi Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Atharva Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Prachi Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+												<CustomListItem>
+													<HBox justifyContent="SpaceBetween" alignItems="Center">
+														<FlexBox fitContainer="true" alignItems="Center">
+															<Avatar displaySize="S" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+															<Title text="Atharva Upadhyay" wrapping="true"/>
+														</FlexBox>
+														<CheckBox></CheckBox>
+													</HBox>
+												</CustomListItem>
+											</f:GridList>
+										</VBox>
+									</IconTabFilter>
+									<IconTabFilter text="Class VI">
+										<HBox class="box-class" justifyContent="SpaceBetween" alignItems="Center">
+											<Title text="Classroom" class="whitefont"></Title>
+											<Title text="Room 3" class="whitefont"></Title>
+										</HBox>
+									</IconTabFilter>
+									<IconTabFilter text="Class VII">
+										<HBox class="box-class" justifyContent="SpaceBetween" alignItems="Center">
+											<Title text="Classroom" class="whitefont"></Title>
+											<Title text="Room 4" class="whitefont"></Title>
+										</HBox>
+									</IconTabFilter>
+									<!--<IconTabFilter text="Class VIII">-->
+									<!--	<Text text="People content goes here ..."/>-->
+									<!--</IconTabFilter>-->
+								</items>
+							</IconTabBar>
+						</VBox>
+					</f:content>
+					<!-- DynamicPage Footer -->
+					<f:footer>
+						<OverflowToolbar></OverflowToolbar>
+					</f:footer>
+				</f:DynamicPage>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,205 @@
+<mvc:View controllerName="com.webcell.koolbuddy.controller.dashboard" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f" xmlns:grid="sap.ui.layout.cssgrid" xmlns:layout="sap.ui.layout"
+	xmlns:unified="sap.ui.unified" xmlns:customCtrl="com.webcell.koolbuddy.control">
+	<App>
+		<pages>
+			<Page showFooter="false" showHeader="false">
+				<core:Fragment fragmentName="com.webcell.koolbuddy.fragment.userMenu" type="XML"/>
+				<f:DynamicPage class="sapUiNoContentPadding" toggleHeaderOnTitleClick="true">
+					<f:title>
+						<f:DynamicPageTitle>
+							<f:heading>
+								<!--<FlexBox fitContainer="true" alignItems="Center">-->
+								<!--	<core:Icon src="sap-icon://menu2" color="white" class="sapUiSmallMarginEnd" press="toggleMenu"></core:Icon>-->
+								<!--	<Title text="Pragya Upadhyay" wrapping="true" class="whitefont"/>-->
+								<!--</FlexBox>-->
+							</f:heading>
+							<f:expandedHeading>
+								<!--<HBox>-->
+								<FlexBox fitContainer="true" alignItems="Center">
+									<core:Icon src="sap-icon://menu2" color="white" class="sapUiSmallMarginEnd" press="toggleMenu"></core:Icon>
+									<Title text="Pragya Upadhyay" wrapping="true" class="whitefont"/>
+								</FlexBox>
+								<!--</HBox>-->
+							</f:expandedHeading>
+							<f:snappedHeading>
+								<FlexBox fitContainer="true" alignItems="Center">
+									<Avatar press="toggleMenu" displaySize="XS" src="image/pragya.jpg" class="sapUiTinyMarginEnd avtarIcon"/>
+									<Title text="Pragya Upadhyay" wrapping="true" class="whitefont"/>
+								</FlexBox>
+							</f:snappedHeading>
+							<f:expandedContent>
+								<VBox>
+									<FlexBox wrap="Wrap">
+										<Avatar displaySize="M" src="image/pragya.jpg" class="sapUiTinyMarginEnd"/>
+										<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+											<!--<Title text="Pragya Upadhyay" wrapping="true"/>-->
+											<Label text="+91 8692999700" class="whitefont"/>
+											<Label text="pragya@gmail.com" class="whitefont"/>
+											<Label text="CLASS TEACHER : 7th" class="whitefont"/>
+										</layout:VerticalLayout>
+									</FlexBox>
+									<VBox class="nextclass">
+										<MessageStrip text="&lt;strong&gt;Next Class : &lt;/strong&gt; Maths || Std. 4th || 1:30 PM" enableFormattedText="true" showIcon="false"
+											showCloseButton="false" class="sapUiTinyMarginBottom sapUiTinyMarginTop"></MessageStrip>
+									</VBox>
+									<VBox visible="{device>/system/phone}">
+										<SearchField placeholder="Search students" width="100%"></SearchField>
+										<layoutData>
+											<OverflowToolbarLayoutData minWidth="100%" maxWidth="100%" shrinkable="true" priority="NeverOverflow"/>
+										</layoutData>
+									</VBox>
+								</VBox>
+							</f:expandedContent>
+							<f:snappedContent>
+								<VBox>
+									<!--<MessageStrip text="Upcoming Classes : Maths || Std. 4th || 1:30 PM" enableFormattedText="true" showIcon="false" showCloseButton="false" class="sapUiTinyMarginBottom sapUiTinyMarginTop"></MessageStrip>-->
+									<VBox visible="{device>/system/phone}">
+										<SearchField placeholder="Search students" width="100%"></SearchField>
+										<layoutData>
+											<OverflowToolbarLayoutData minWidth="100%" maxWidth="100%" shrinkable="true" priority="NeverOverflow"/>
+										</layoutData>
+									</VBox>
+								</VBox>
+							</f:snappedContent>
+							<f:content></f:content>
+							<f:actions>
+								<VBox visible="{= ${device>/system/phone} ? false : true}">
+									<SearchField width="100%"></SearchField>
+									<layoutData>
+										<OverflowToolbarLayoutData minWidth="100%" maxWidth="100%" shrinkable="true" priority="NeverOverflow"/>
+									</layoutData>
+								</VBox>
+							</f:actions>
+							<f:navigationActions>
+								<!--<Button text="AA"></Button>-->
+							</f:navigationActions>
+						</f:DynamicPageTitle>
+					</f:title>
+					<!-- DynamicPage Header -->
+					<f:header>
+						<f:DynamicPageHeader pinnable="true"></f:DynamicPageHeader>
+					</f:header>
+					<f:content>
+						<VBox height="100%">
+							<VBox class="sapUiSmallMarginBegin sapUiTinyMarginTop sapUiSmallMarginEnd">
+								<SegmentedButton selectedKey="Calender" width="100%" selectionChange="onDisplayTypeChange">
+									<items>
+										<SegmentedButtonItem text="Calender" key="Calender"/>
+										<SegmentedButtonItem text="Dashboard" key="Dashboard"/>
+									</items>
+								</SegmentedButton>
+							</VBox>
+							<VBox id="idmyClanedar" class="sapUiSmallMargin">
+								<SinglePlanningCalendar class="myClanedar" startHour="8" endHour="20" fullDay="fale" title="" viewChange="handleViewChange"
+									appointmentSelect="handleAppointmentSelect" headerDateSelect="handleHeaderDateSelect" startDateChange="handleStartDateChange"
+									appointmentDrop="handleAppointmentDrop" appointmentResize="handleAppointmentResize" appointmentCreate="handleAppointmentCreateDnD"
+									moreLinkPress="handleMoreLinkPress" startDate="{path: '/startDate'}"
+									enableAppointmentsDragAndDrop="{settings>/enableAppointmentsDragAndDrop}" enableAppointmentsResize="{settings>/enableAppointmentsResize}"
+									enableAppointmentsCreate="{settings>/enableAppointmentsCreate}" stickyMode="{settings>/stickyMode}" appointments="{path: '/appointments'}">
+									<actions>
+										<!--<VBox>-->
+											<Button id="addNewAppointment" type="Emphasized" text="Add" press="handleAppointmentCreate" tooltip="Add new appointment"/>
+											<!--<layoutData>-->
+											<!--	<OverflowToolbarLayoutData minWidth="100%" maxWidth="100%" shrinkable="true" priority="NeverOverflow"/>-->
+											<!--</layoutData>-->
+										<!--</VBox>-->
+										<!--<Button id="addNewAppointment" type="Emphasized" text="Create" press="handleAppointmentCreate" tooltip="Add new appointment"/>-->
+										<!--<Button id="legendButton" icon="sap-icon://legend" press="handleOpenLegend" tooltip="Open SinglePlanningCalendar legend"/>-->
+									</actions>
+									<views>
+										<SinglePlanningCalendarDayView key="DayView" title="Day"/>
+										<!--<SinglePlanningCalendarWorkWeekView key="WorkWeekView" title="Work Week"/>-->
+										<SinglePlanningCalendarWeekView key="WeekView" title="Week"/>
+										<!--<SinglePlanningCalendarMonthView key="MonthView" title="Month"/>-->
+									</views>
+									<appointments>
+										<!--<customCtrl:CustCalendarAppointment title="{title}" text="{text}" type="{type}" icon="{icon}" startDate="{startDate}" endDate="{endDate}"></customCtrl:CustCalendarAppointment>-->
+										<unified:CalendarAppointment title="{title}" text="{text}" type="{type}" icon="{icon}" startDate="{startDate}" endDate="{endDate}"></unified:CalendarAppointment>
+									</appointments>
+								</SinglePlanningCalendar>
+							</VBox>
+							<VBox id="iddashboardList" visible="false" class="sapUiSmallMargin">
+								<f:GridList class="dashboardList" updateFinished="onUpdateFinished">
+									<f:customLayout >
+										<!--<grid:GridBoxLayout boxMinWidth="7rem" boxWidth="12rem" boxesPerRowConfig="XL3 L3 M2 S1"/>-->
+										<grid:GridBoxLayout boxesPerRowConfig="XL4 L4 M3 S2"/>
+										<!--<grid:GridResponsiveLayout>-->
+										<!--	<grid:layoutS>-->
+										<!--		<grid:GridSettings gridTemplateColumns="repeat(2fr)" gridGap="2rem 2rem"></grid:GridSettings>-->
+										<!--	</grid:layoutS>-->
+										<!--</grid:GridResponsiveLayout>-->
+									</f:customLayout>
+									<CustomListItem type="Active" class="gridItem" press="onAttendance">
+										<FlexBox alignItems="Center" justifyContent="Center">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/attendance.png" width="4em"></Image>
+													<Title text="Attendance" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+									<CustomListItem type="Active" class="gridItem" press="onMyStudents">
+										<FlexBox alignItems="Center" justifyContent="Center" class="sapUiTinyMarginTop">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/studetns.png" width="4em"></Image>
+													<Title text="My Students" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+									<CustomListItem type="Active" class="gridItem">
+										<FlexBox alignItems="Center" justifyContent="Center" class="sapUiTinyMarginTop">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/notice.png" width="4em"></Image>
+													<Title text="Notices" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+									<CustomListItem type="Active" class="gridItem">
+										<FlexBox alignItems="Center" justifyContent="Center" class="sapUiTinyMarginTop">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/myclasses-female1.png" width="4em"></Image>
+													<Title text="My Classes" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+									<CustomListItem type="Active" class="gridItem">
+										<FlexBox alignItems="Center" justifyContent="Center" class="sapUiTinyMarginTop">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/leaves.png" width="4em"></Image>
+													<Title text="My Leaves" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+									<CustomListItem type="Active" class="gridItem">
+										<FlexBox alignItems="Center" justifyContent="Center">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/holiday.png" width="4em"></Image>
+													<Title text="Holiday List" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+								</f:GridList>
+							</VBox>
+						</VBox>
+					</f:content>
+					<!-- DynamicPage Footer -->
+					<f:footer>
+						<OverflowToolbar></OverflowToolbar>
+					</f:footer>
+				</f:DynamicPage>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

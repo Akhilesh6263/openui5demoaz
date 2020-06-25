@@ -1,0 +1,152 @@
+<mvc:View controllerName="com.webcell.koolbuddy.controller.studentDetails" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f" xmlns:cards="sap.f.cards" xmlns:grid="sap.ui.layout.cssgrid" xmlns:layout="sap.ui.layout"
+	xmlns:unified="sap.ui.unified" xmlns:customCtrl="com.webcell.koolbuddy.control">
+	<App>
+		<pages>
+			<Page showFooter="false" showHeader="false">
+				<core:Fragment fragmentName="com.webcell.koolbuddy.fragment.userMenu" type="XML"/>
+				<f:DynamicPage class="sapUiNoContentPadding" toggleHeaderOnTitleClick="true">
+					<f:title>
+						<f:DynamicPageTitle>
+							<f:heading>
+								<FlexBox fitContainer="true" alignItems="Center">
+									<core:Icon src="sap-icon://menu2" color="white" class="sapUiSmallMarginEnd" press="toggleMenu"></core:Icon>
+									<Title text="Prachi Upadhyay" wrapping="true" class="whitefont"/>
+								</FlexBox>
+							</f:heading>
+							<f:expandedContent>
+								<VBox>
+									<FlexBox wrap="Wrap">
+										<Avatar displaySize="M" src="image/prachi.jpg" class="sapUiTinyMarginEnd"/>
+										<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+											<!--<Title text="Prachi Upadhyay" wrapping="true"/>-->
+											<Label text="+91 8692999700" class="whitefont"/>
+											<Label text="Parents: Pragya-Akhilesh" class="whitefont"/>
+											<Label text="Class: VII" class="whitefont"/>
+										</layout:VerticalLayout>
+									</FlexBox>
+								</VBox>
+							</f:expandedContent>
+							<f:snappedContent></f:snappedContent>
+							<f:content></f:content>
+							<f:actions></f:actions>
+							<f:navigationActions>
+								<core:Icon src="sap-icon://nav-back" color="white" press="onBack"></core:Icon>
+							</f:navigationActions>
+						</f:DynamicPageTitle>
+					</f:title>
+					<!-- DynamicPage Header -->
+					<f:header>
+						<f:DynamicPageHeader pinnable="true"></f:DynamicPageHeader>
+					</f:header>
+					<f:content>
+						<VBox height="100%" class="sapUiSmallMargin">
+							<VBox >
+								<SegmentedButton selectedKey="Dashboard" width="100%" selectionChange="onDisplayTypeChange">
+									<items>
+										<SegmentedButtonItem text="Dashboard" key="Dashboard"/>
+										<SegmentedButtonItem text="Reports" key="Reports"/>
+									</items>
+								</SegmentedButton>
+							</VBox>
+							<f:GridList id="dashboardList" class="dashboardList sapUiSmallMarginTop" updateFinished="onUpdateFinished">
+									<f:customLayout >
+										<grid:GridBoxLayout boxesPerRowConfig="XL4 L4 M3 S2"/>
+									</f:customLayout>
+									<CustomListItem type="Active">
+										<FlexBox alignItems="Center" justifyContent="Center" class="sapUiTinyMarginTop">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/notice.png" width="4em"></Image>
+													<Title text="Notices" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+									<CustomListItem type="Active" press="onAttendance">
+										<FlexBox alignItems="Center" justifyContent="Center">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/attendance.png" width="4em"></Image>
+													<Title text="Homework" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+									<CustomListItem type="Active" press="onMyStudents">
+										<FlexBox alignItems="Center" justifyContent="Center" class="sapUiTinyMarginTop">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/studetns.png" width="4em"></Image>
+													<Title text="Progress Input" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+									<CustomListItem type="Active" press="onAttendance">
+										<FlexBox alignItems="Center" justifyContent="Center">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/attendance.png" width="4em"></Image>
+													<Title text="Message to Parents" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+									<CustomListItem type="Active">
+										<FlexBox alignItems="Center" justifyContent="Center" class="sapUiTinyMarginTop">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/myclasses-female1.png" width="4em"></Image>
+													<Title text="Activities" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+									<CustomListItem type="Active" press="onAttendance">
+										<FlexBox alignItems="Center" justifyContent="Center">
+											<items>
+												<VBox alignItems="Center" justifyContent="Center">
+													<Image src="image/attendance.png" width="4em"></Image>
+													<Title text="Sports History" class="sapUiSmallMarginTop"></Title>
+												</VBox>
+											</items>
+										</FlexBox>
+									</CustomListItem>
+								</f:GridList>
+							<Carousel visible="false" arrowsPlacement="PageIndicator" id="idReports" height="auto" class="carousalctrl sapUiSmallMarginTop">
+								<customLayout>
+									<CarouselLayout visiblePagesCount="{= ${device>/system/phone} ? 1 : ${device>/system/tablet} ? 2 : 3}"/>
+								</customLayout>
+								<f:Card >
+									<f:header>
+										<cards:Header title="Attendance Report" subtitle="" iconSrc="" iconDisplayShape="Square"/>
+									</f:header>
+									<f:content>
+										<layout:VerticalLayout class="sapUiContentPadding chartBox" width="100%">
+											<Text text="aaaaaa"></Text>
+										</layout:VerticalLayout>
+									</f:content>
+								</f:Card>
+								<f:Card>
+									<f:header>
+										<cards:Header title="Results" subtitle="" iconSrc="" iconDisplayShape="Square"/>
+									</f:header>
+									<f:content>
+										<layout:VerticalLayout class="sapUiContentPadding chartBox" width="100%">
+											
+										</layout:VerticalLayout>
+									</f:content>
+								</f:Card>
+							</Carousel>
+						</VBox>
+					</f:content>
+					<!-- DynamicPage Footer -->
+					<f:footer>
+						<OverflowToolbar></OverflowToolbar>
+					</f:footer>
+				</f:DynamicPage>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,39 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.webcell.koolbuddy.controller.userRegistration" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page showHeader="false" class="whiteBGPage">
+				<content>
+					<VBox alignContent="Center" alignItems="Center" height="100%" width="100%">
+						<HBox justifyContent="SpaceBetween" width="100%">
+							<Button type="Back" press="onBack"></Button>
+						</HBox>
+						<Image src="image/mnr-logo2.jpg" width="10em" class="sapUiSmallMarginTop"></Image>
+						<VBox class="sapUiMediumMarginTop loginVBContainer" width="80%">
+							<SegmentedButton selectedKey="Teacher" width="100%">
+								<items>
+									<SegmentedButtonItem text="Teacher" key="Teacher"/>
+									<SegmentedButtonItem text="Office Staff"/>
+									<SegmentedButtonItem text="Principle"/>
+								</items>
+							</SegmentedButton>
+							<Input placeholder="First Name"></Input>
+							<Input placeholder="Last Name"></Input>
+							<Input placeholder="Mobile number"></Input>
+							<Input placeholder="Email"></Input>
+							<Input placeholder="Password"></Input>
+						</VBox>
+						<VBox class="sapUiMediumMarginTop" width="80%">
+							<Button text="Register" width="100%" class="redButton" press="onLogin"></Button>
+						</VBox>
+						<!--<Link text="Forget Password?" press="onForgetPassword" class="sapUiSmallMarginTop"/>-->
+						<!--<Text text="OR" class="sapUiLargeMarginTop"></Text>-->
+						<!--<VBox class="sapUiLargeMarginTop" width="80%">-->
+						<!--	<Button text="SIGNUP" width="100%" class="blueButton" press="onRegister"></Button>-->
+						<!--</VBox>-->
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

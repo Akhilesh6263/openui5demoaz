@@ -1,0 +1,119 @@
+<mvc:View controllerName="com.webcell.koolbuddy.controller.students" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f" xmlns:grid="sap.ui.layout.cssgrid" xmlns:layout="sap.ui.layout"
+	xmlns:unified="sap.ui.unified" xmlns:customCtrl="com.webcell.koolbuddy.control">
+	<App>
+		<pages>
+			<Page showFooter="false" showHeader="false">
+				<core:Fragment fragmentName="com.webcell.koolbuddy.fragment.userMenu" type="XML"/>
+				<f:DynamicPage class="sapUiNoContentPadding" toggleHeaderOnTitleClick="true" stickySubheaderProvider="iconTabBar">
+					<f:title>
+						<f:DynamicPageTitle>
+							<f:heading>
+								<FlexBox fitContainer="true" alignItems="Center">
+									<core:Icon src="sap-icon://menu2" color="white" class="sapUiSmallMarginEnd" press="toggleMenu"></core:Icon>
+									<Title text="Students List" wrapping="true" class="whitefont"/>
+								</FlexBox>
+							</f:heading>
+							<f:expandedContent>
+								<VBox>
+									<VBox visible="{device>/system/phone}">
+										<SearchField placeholder="Search students" width="100%"></SearchField>
+										<layoutData>
+											<OverflowToolbarLayoutData minWidth="100%" maxWidth="100%" shrinkable="true" priority="NeverOverflow"/>
+										</layoutData>
+									</VBox>
+									<MultiComboBox placeholder="Class" class="multicomboclass">
+										<core:Item key="V" text="V"/>
+										<core:Item key="VI" text="VI"/>
+										<core:Item key="VII" text="VII"/>
+									</MultiComboBox>
+								</VBox>
+							</f:expandedContent>
+							<f:snappedContent></f:snappedContent>
+							<f:content></f:content>
+							<f:actions>
+								<HBox justifyContent="SpaceBetween" alignItems="Center">
+									<VBox visible="{= ${device>/system/phone} ? false : true}">
+										<SearchField placeholder="Search students" width="100%"></SearchField>
+										<layoutData>
+											<OverflowToolbarLayoutData minWidth="100%" maxWidth="100%" shrinkable="true" priority="NeverOverflow"/>
+										</layoutData>
+									</VBox>
+									<core:Icon class="sapUiSmallMarginBegin" visible="{= ${device>/system/desktop} ? false : true}" src="sap-icon://nav-back" color="white"
+										press="onBack"></core:Icon>
+								</HBox>
+							</f:actions>
+							<f:navigationActions>
+								<core:Icon visible="{device>/system/desktop}" src="sap-icon://nav-back" color="white" press="onBack"></core:Icon>
+							</f:navigationActions>
+						</f:DynamicPageTitle>
+					</f:title>
+					<!-- DynamicPage Header -->
+					<f:header>
+						<f:DynamicPageHeader pinnable="true">
+							<!--<HBox justifyContent="SpaceBetween" alignItems="Center">-->
+							<!--<MultiComboBox placeholder="Parents">-->
+							<!--	<core:Item key="Mother" text="Mother"/>-->
+							<!--</MultiComboBox>-->
+							<!--	<Input placeholder="Phone">-->
+							<!--	</Input>-->
+							<!--	<MultiComboBox placeholder="Class">-->
+							<!--		<core:Item key="V" text="V"/>-->
+							<!--		<core:Item key="VI" text="VI"/>-->
+							<!--		<core:Item key="VII" text="VII"/>-->
+							<!--	</MultiComboBox>-->
+							<!--</HBox>-->
+						</f:DynamicPageHeader>
+					</f:header>
+					<f:content>
+						<VBox class="sapUiSmallMargin">
+							<Panel class="studentpanel">
+								<headerToolbar>
+									<OverflowToolbar>
+										<ToolbarSpacer></ToolbarSpacer>
+										<ToolbarSpacer></ToolbarSpacer>
+										<SegmentedButton selectedKey="list" selectionChange="onDisplayTypeChange">
+											<items>
+												<SegmentedButtonItem icon="sap-icon://list" key="list"/>
+												<SegmentedButtonItem icon="sap-icon://grid" key="grid"/>
+											</items>
+										</SegmentedButton>
+									</OverflowToolbar>
+								</headerToolbar>
+								<content>
+									<List id="idList"
+										items="{ path: 'studenModel>/', sorter: { path: 'class', descending: false, group: true }, groupHeaderFactory: '.getGroupHeader' }">
+										<StandardListItem type="Active" press="onStudentSelect" title="{studenModel>Name}" description="{studenModel>Phone}" icon="{studenModel>ProductPicUrl}" iconDensityAware="false"
+											iconInset="false"/>
+									</List>
+									<f:GridList visible="false" id="idGrid" class="dashboardList" items="{studenModel>/}">
+										<f:customLayout >
+											<grid:GridBoxLayout boxesPerRowConfig="XL5 L4 M4 S2"/>
+										</f:customLayout>
+										<CustomListItem type="Active" press="onStudentSelect">
+											<VBox class="sapUiTinyMargin">
+												<VBox alignItems="Center" justifyContent="Center">
+													<Avatar displaySize="S" src="{studenModel>ProductPicUrl}" class="sapUiTinyMarginEnd"/>
+													<!--<Image src="{studenModel>ProductPicUrl}" width="4em"></Image>-->
+													<Title text="{studenModel>Name}" class="sapUiTinyMarginTop"></Title>
+													<Text text="{studenModel>Phone}" class=""></Text>
+													<Text text="Address" class=""></Text>
+												</VBox>
+											</VBox>
+										</CustomListItem>
+									</f:GridList>
+								</content>
+							</Panel>
+							<!--<VBox class="sapUiSmallMarginTop sapUiSmallMarginEnd sapUiSmallMarginBottom sapUiSmallMarginBegin">-->
+							<!--</VBox>-->
+						</VBox>
+					</f:content>
+					<!-- DynamicPage Footer -->
+					<f:footer>
+						<OverflowToolbar></OverflowToolbar>
+					</f:footer>
+				</f:DynamicPage>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
